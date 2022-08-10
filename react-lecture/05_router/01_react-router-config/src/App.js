@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+/* BrowserRouter 컴포넌트를 이용하여 라우팅 설정을 한다. */
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Main from './pages/Main';
+import About from './pages/About';
+import Menu from './pages/Menu';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          {/* 루트 요청 시 Main으로 이동하도록 설정 */}
+          {/* <Route path="/" element={ <Main/> }/> */}
+          {/* 인덱스로 설정해두면 위의 설정(루트 요청)과 동일 */}
+          <Route index element={ <Main/> }/>
+          <Route path="/about" element={ <About/> }/>
+          <Route path="/menu" element={ <Menu/> }/>
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
