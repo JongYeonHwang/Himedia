@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>치킨 조아</title>
+    <title>Document</title>
     <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -79,7 +79,7 @@
             height: 100px;
             display: flex;
             background: black;
-            color: gray;
+            color: white;
             justify-content: center;
             align-items: center;
             flex-direction: column;
@@ -96,7 +96,7 @@
 
             return (
                 <div className="header">
-                    <h1>이번 달 클리어할 치킨 목록! { new Date().toLocaleDateString() }</h1>    
+                    <h1>오늘의 할일! { new Date().toLocaleDateString() }</h1>    
                 </div>
             );
         }
@@ -151,9 +151,9 @@
         function TodoList() {
 
             const [todos, setTodos] = useState([
-                {id: 1, description: '굽네치킨 / 고추 바사삭', isDone: false}
+                {id: 1, description: 'Java Script 기본 문법 마스터', isDone: false}
             ]); 
-            const [inputText, setInputText] = useState('');
+
             const [nextId, setNextId] = useState(2);
 
             const onChangeHandler = (e) => {
@@ -175,14 +175,17 @@
 
             return (
                 <>
-                    <h3>Chicken-List</h3>
+                    <h3>ToDo-List</h3>
                     <div className="todo-list">
                         <TodoItems 
                             todos={ todos } 
                             setTodos={ setTodos }
                         />
                     </div>
-                        <button onClick={ () => removeTodo(todo.id) }>전체 삭제</button>
+                    <div className="append-list">
+                        <button onClick={ onClickHandler }>추가하기</button>
+                        <button onClick={ onClickHandler }>추가하기</button>
+                    </div>
                 </>
             );
         }
