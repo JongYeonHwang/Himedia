@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 
-	<h1>메인페이지입니다5</h1>
-
-	<button onclick="location.href='/two/menu'">두번째 </button>
-
+	<h1 th:text="${ message }"> 두번째</h1>
 </body>
 </html>
